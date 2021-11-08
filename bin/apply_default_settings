@@ -57,8 +57,8 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 printf "%s\n" "Keyboard - Set a fast keyboard repeat rate."
 defaults write NSGlobalDomain KeyRepeat -int 0
 
-printf "%s\n" "Keyboard - Disable press-and-hold for keys in favor of key repeat."
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+#printf "%s\n" "Keyboard - Disable press-and-hold for keys in favor of key repeat."
+#defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 printf "%s\n" "Trackpad - Map bottom right corner to right-click."
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
@@ -111,8 +111,8 @@ chflags nohidden $HOME/Library
 printf "%s\n" "Finder - Show hidden files."
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-printf "%s\n" "Finder - Show filename extensions."
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# printf "%s\n" "Finder - Show filename extensions."
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 printf "%s\n" "Finder - Disable the warning when changing a file extension."
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -213,3 +213,8 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 printf "%s\n" "App Store - Enable Debug Menu in the Mac App Store."
 defaults write com.apple.appstore ShowDebugMenu -bool true
+
+
+
+echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
